@@ -1,8 +1,8 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Console\Commands;
+namespace Misfits\ApiGuard\Console\Commands;
 
-use Chrisbjr\ApiGuard\Models\ApiKey;
+use Misfits\ApiGuard\Models\ApiKey;
 use Illuminate\Console\Command;
 
 class GenerateApiKey extends Command

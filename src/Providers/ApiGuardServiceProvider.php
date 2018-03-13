@@ -1,9 +1,9 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Providers;
+namespace Misfits\ApiGuard\Providers;
 
-use Chrisbjr\ApiGuard\Console\Commands\GenerateApiKey;
-use Chrisbjr\ApiGuard\Http\Middleware\AuthenticateApiKey;
+use Misfits\ApiGuard\Console\Commands\GenerateApiKey;
+use Misfits\ApiGuard\Http\Middleware\AuthenticateApiKey;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;

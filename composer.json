@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Chrisbjr\\ApiGuard\\": "src"
+            "Misfits\\ApiGuard\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Chrisbjr\\ApiGuard\\Providers\\ApiGuardServiceProvider"
+                "Misfits\\ApiGuard\\Providers\\ApiGuardServiceProvider"
             ]
         }
     },

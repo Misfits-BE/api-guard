@@ -1,6 +1,6 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Http\Requests;
+namespace Misfits\ApiGuard\Http\Requests;
 
 use EllipseSynergie\ApiResponse\Laravel\Response;
 use Illuminate\Contracts\Validation\Validator;
