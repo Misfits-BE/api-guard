@@ -26,9 +26,9 @@ A simple way of authenticating your APIs with API keys using Laravel. This packa
 
 ### Installation for Laravel 5.3 to 5.4
 
-Run `composer require chrisbjr/api-guard 4.*`
+Run `composer require `misfits/api-guard 4.*`
 
-In your `config/app.php` add `Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider` to the end of the `providers` array
+In Laravel 5.5 and higher the service provider will automatically get registered. In older versions of the framework just add the service provider in config/app.php file:
 
 ```php
 'providers' => array(

@@ -1,5 +1,5 @@
 {
-    "name": "chrisbjr/api-guard",
+    "name": "misfits/api-guard",
     "description": "A simple way of authenticating your APIs with API keys using Laravel",
     "keywords": [
         "api",
@@ -18,6 +18,10 @@
         {
             "name": "Mark Jayson Fuentes",
             "email": "awkwardusername@gmail.com"
+        }, 
+        {
+            "name": "Tim Joosten", 
+            "email": "tim@activisme.be"
         }
     ],
     "require": {
@@ -32,6 +36,13 @@
     "autoload": {
         "psr-4": {
             "Chrisbjr\\ApiGuard\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Chrisbjr\\ApiGuard\\Providers\\ApiGuardServiceProvider"
+            ]
         }
     },
     "minimum-stability": "stable"
