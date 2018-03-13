@@ -13,6 +13,7 @@ class ApiKey extends Model
 
     protected $fillable = [
         'key',
+        'service',
         'apikeyable_id',
         'apikeyable_type',
         'last_ip_address',
