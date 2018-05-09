@@ -6,14 +6,24 @@ use Carbon\Carbon;
 use Closure;
 use Misfits\ApiGuard\Events\ApiKeyAuthenticated;
 
+/**
+ * Class AuthenticateApiKey
+ * ----
+ * Middleware to protect the API endpoints.
+ *
+ * @author   Tim Joosten    <https://www.github.com/Tjoosten>
+ * @author   Chris Bautista <https://github.com/chrisbjr>
+ * @license  https://github.com/Misfits-BE/api-guard/blob/master/LICENSE.md - MIT license
+ * @package  Misfits\ApiGuard\Http\Middleware
+ */
 class AuthenticateApiKey
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param Closure $next
-     * @param  string|null $guard
+     * @param  \Illuminate\Http\Request $request    The variable for all the data that is related to the request.
+     * @param  Closure                  $next       Variable for further processing the request
+     * @param  string|null              $guard      The authentication guard name
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
@@ -50,6 +60,11 @@ class AuthenticateApiKey
         return $next($request);
     }
 
+    /**
+     * The response when the user gives a wrong API key.
+     *
+     * @return mixed
+     */
     protected function unauthorizedResponse()
     {
         return response([
