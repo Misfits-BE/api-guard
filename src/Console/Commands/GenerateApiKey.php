@@ -5,6 +5,14 @@ namespace Misfits\ApiGuard\Console\Commands;
 use Illuminate\Console\Command;
 use Misfits\ApiGuard\Models\ApiKey;
 
+/**
+ * Class GenerateApiKey
+ *
+ * @author   Tim Joosten    <https://www.github.com/Tjoosten>
+ * @author   Chris Bautista <https://github.com/chrisbjr>
+ * @license  https://github.com/Misfits-BE/api-guard/blob/master/LICENSE.md - MIT license
+ * @package  Misfits\ApiGuard\Console\Commands
+ */
 class GenerateApiKey extends Command
 {
     /**
@@ -26,6 +34,7 @@ class GenerateApiKey extends Command
     /**
      * Create a new command instance.
      *
+     * @return void
      */
     public function __construct()
     {

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Misfits\ApiGuard\Models\ApiKey;
 
 /**
- * Class ApiKeyable
+ * Trait ApiKeyable
  * ----
  * Trait class for the apikey model functions.
  *
