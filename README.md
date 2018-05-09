@@ -138,6 +138,64 @@ protected $middlewareGroups = [
 If you noticed in the basic example, you can also access the attached model to the API key by calling `$request->user()`. We are attaching the related model in
 this method because in most use cases, this is actually the user.
 
+#### Accessibility to user data from controller 
+
+This library will attach the authenticated user information via middleware inject in [AuthenticateApiKey](https://github.com/misftis-be/api-guard/blob/master/src/Http/Middleware/AuthenticateApiKey.php#L47), So to access user information inside a controller do the following:
+
+1. Add `auth.apikey` to `$middlewareGroups` in `app/Http/Kernel.php`:
+
+```php
+/**
+ * The application's route middleware groups. 
+ * 
+ * @var array
+ */
+protected $middlewareGroups = [
+    ...
+    'api' => [
+        'throttle:60,1',
+        'bindings', 
+        'auth.apikey', // here
+    ]
+];
+```
+2. Access to user information: 
+
+```php
+$apiKey = request()->apiKey; // Will return an apiKey information instance
+```
+
+The output will look like:
+
+```php 
+{
+    "id": 25, // ID field in api_keys table
+    "apikeyable_id": 1, // Reference to user, person, or any resource
+    "apikeyable_type": "App\\User", // Api key type. (model)
+    "key": "e8655df75b449878d48ed6ece31719513828a05c", // Api token key
+    "last_ip_address": "192.168.10.1", // Last origin request
+    "last_used_at": {
+        "date": "2017-07-24 10:17:53.868782",
+        "timezone_type": 3,
+        "timezone": "Asia/Riyadh"
+    },
+    "created_at": "2017-07-24 09:17:18",
+    "updated_at": "2017-07-24 10:17:53",
+    "deleted_at": null,
+    "apikeyable": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "name@example.com",
+        "mobile": "+966555555555",
+        
+        ...
+
+        "created_at": "2017-07-23 14:08:25",
+        "updated_at": "2017-07-23 14:08:25",
+    }
+}
+```
+
 ### Unauthorized Requests
 
 Unauthorized requests will get a `401` status response with the following JSON:
