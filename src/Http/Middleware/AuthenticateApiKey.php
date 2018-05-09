@@ -3,9 +3,8 @@
 namespace Misfits\ApiGuard\Http\Middleware;
 
 use Carbon\Carbon;
-use Misfits\ApiGuard\Events\ApiKeyAuthenticated;
-use Misfits\ApiGuard\Models\Device;
 use Closure;
+use Misfits\ApiGuard\Events\ApiKeyAuthenticated;
 
 class AuthenticateApiKey
 {

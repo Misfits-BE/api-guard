@@ -2,11 +2,11 @@
 
 namespace Misfits\ApiGuard\Providers;
 
-use Misfits\ApiGuard\Console\Commands\GenerateApiKey;
-use Misfits\ApiGuard\Http\Middleware\AuthenticateApiKey;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
+use Misfits\ApiGuard\Console\Commands\GenerateApiKey;
+use Misfits\ApiGuard\Http\Middleware\AuthenticateApiKey;
 
 class ApiGuardServiceProvider extends ServiceProvider
 {
@@ -43,7 +43,7 @@ class ApiGuardServiceProvider extends ServiceProvider
     private function defineMiddleware($router)
     {
         foreach ($this->middlewares as $name => $class) {
-            if ( version_compare(app()->version(), '5.4.0') >= 0 ) {
+            if (version_compare(app()->version(), '5.4.0') >= 0) {
                 $router->aliasMiddleware($name, $class);
             } else {
                 $router->middleware($name, $class);
