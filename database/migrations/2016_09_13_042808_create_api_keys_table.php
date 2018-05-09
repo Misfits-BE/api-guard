@@ -4,6 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * Class CreateApiKeysTable
+ *
+ * @author   Tim Joosten    <https://www.github.com/Tjoosten>
+ * @author   Chris Bautista <https://github.com/chrisbjr>
+ * @license  https://github.com/Misfits-BE/api-guard/blob/master/LICENSE.md - MIT license
+ */
 class CreateApiKeysTable extends Migration
 {
     /**

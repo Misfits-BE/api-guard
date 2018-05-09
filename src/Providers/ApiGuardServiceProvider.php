@@ -8,11 +8,22 @@ use Illuminate\Support\ServiceProvider;
 use Misfits\ApiGuard\Console\Commands\GenerateApiKey;
 use Misfits\ApiGuard\Http\Middleware\AuthenticateApiKey;
 
+/**
+ * Class ApiGuardServiceProvider
+ *
+ * @author   Tim Joosten    <https://www.github.com/Tjoosten>
+ * @author   Chris Bautista <https://github.com/chrisbjr>
+ * @license  https://github.com/Misfits-BE/api-guard/blob/master/LICENSE.md - MIT license
+ * @package  Misfits\ApiGuard\Providers
+ */
 class ApiGuardServiceProvider extends ServiceProvider
 {
-    protected $middlewares = [
-        'auth.apikey' => AuthenticateApiKey::class,
-    ];
+    /**
+     * The applied middleware instances from the package.
+     *
+     * @var array $middlewares
+     */
+    protected $middlewares = ['auth.apikey' => AuthenticateApiKey::class];
 
     /**
      * Bootstrap the application services.
@@ -35,11 +46,15 @@ class ApiGuardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands([
-            GenerateApiKey::class,
-        ]);
+        $this->commands([GenerateApiKey::class,]);
     }
 
+    /**
+     * Define the middlewares from the package.
+     *
+     * @param  string $router The variable from the routing system.
+     * @return void
+     */
     private function defineMiddleware($router)
     {
         foreach ($this->middlewares as $name => $class) {
@@ -51,6 +66,11 @@ class ApiGuardServiceProvider extends ServiceProvider
         }
     }
 
+    /**
+     * The class that handles all the file publish methods.
+     *
+     * @return void
+     */
     private function publishFiles()
     {
         $this->publishes([

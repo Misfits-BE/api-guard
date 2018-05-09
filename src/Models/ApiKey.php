@@ -7,20 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Request;
 
+/**
+ * Class ApiKey
+ *
+ * @author   Tim Joosten    <https://www.github.com/Tjoosten>
+ * @author   Chris Bautista <https://github.com/chrisbjr>
+ * @license  https://github.com/Misfits-BE/api-guard/blob/master/LICENSE.md - MIT license
+ * @package  Misfits\ApiGuard\Models
+ */
 class ApiKey extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [
-        'key',
-        'service',
-        'apikeyable_id',
-        'apikeyable_type',
-        'last_ip_address',
-        'last_used_at',
-    ];
+    /**
+     * Mass-assign fields for the database table.
+     * @var array
+     */
+    protected $fillable = ['key', 'service', 'apikeyable_id', 'apikeyable_type', 'last_ip_address', 'last_used_at'];
 
     /**
+     * The morph relation for getting the data for the api key.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function apikeyable()
@@ -29,8 +36,9 @@ class ApiKey extends Model
     }
 
     /**
-     * @param $apikeyable
+     * Create the new api key in the database table. (MySQL: api_keys)
      *
+     * @param  mixed $apikeyable The api key instance form the generate method
      * @return ApiKey
      */
     public static function make($apikeyable)
@@ -67,7 +75,7 @@ class ApiKey extends Model
     /**
      * Checks whether a key exists in the database or not
      *
-     * @param $key
+     * @param  string $key The api key from the database table.
      * @return bool
      */
     private static function keyExists($key): bool
