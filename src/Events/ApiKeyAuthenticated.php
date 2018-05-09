@@ -2,8 +2,8 @@
 
 namespace Misfits\ApiGuard\Events;
 
-use Misfits\ApiGuard\Models\ApiKey;
 use Illuminate\Queue\SerializesModels;
+use Misfits\ApiGuard\Models\ApiKey;
 
 class ApiKeyAuthenticated
 {

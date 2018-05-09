@@ -2,8 +2,8 @@
 
 namespace Misfits\ApiGuard\Console\Commands;
 
-use Misfits\ApiGuard\Models\ApiKey;
 use Illuminate\Console\Command;
+use Misfits\ApiGuard\Models\ApiKey;
 
 class GenerateApiKey extends Command
 {
