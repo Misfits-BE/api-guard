@@ -4,6 +4,7 @@
 # Ignore all test and documentation with "export-ignore"
 /.gitattributes     export-ignore
 /.editorconfig      export-ignore
+/CONTRIBUTING.md    export-ignore
 /.gitignore         export-ignore
 /.php_cs            export-ignore
 /composer.lock      export-ignore
