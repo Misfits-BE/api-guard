@@ -5,6 +5,7 @@
 /.gitattributes     export-ignore
 /.editorconfig      export-ignore
 /CONTRIBUTING.md    export-ignore
+/CHANGELOG.md       export-ignore
 /.gitignore         export-ignore
 /.php_cs            export-ignore
 /composer.lock      export-ignore
