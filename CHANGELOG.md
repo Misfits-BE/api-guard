@@ -12,3 +12,4 @@ All notable changes to `misfits/api-guard` will be documented in this file.
 - e11ea4b Implement .gitattributes file 
 - 2857580 Implement docblocks to the package 
 - aecc201 Implement CONTRIBUTION file
+- d0660a5 Implement changelog
