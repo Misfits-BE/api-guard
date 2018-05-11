@@ -22,7 +22,7 @@ trait Apikeyable
      *
      * @return MorpMany
      */
-    public function apiKeys(): MorpMany
+    public function apiKeys()
     {
         return $this->morphMany(config('apiguard.models.api_key', ApiKey::class), 'apikeyable');
     }
