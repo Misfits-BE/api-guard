@@ -21,9 +21,17 @@ class ApiKey extends Model
 
     /**
      * Mass-assign fields for the database table.
+     *
      * @var array
      */
     protected $fillable = ['key', 'service', 'apikeyable_id', 'apikeyable_type', 'last_ip_address', 'last_used_at'];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['last_used_at', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
      * The morph relation for getting the data for the api key.
